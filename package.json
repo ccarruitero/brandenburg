@@ -1,0 +1,32 @@
+{
+  "name": "brandenburg",
+  "description": "simple crud with express",
+  "version": "0.1.0",
+  "homepage": "https://github.com/ccarruitero/brandenburg",
+  "author": {
+    "name": "Cesar Carruitero",
+    "email": "cesar@mozilla.pe"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ccarruitero/brandenburg.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ccarruitero/brandenburg/issues"
+  },
+  "licenses": [
+    {
+      "type": "MPL",
+      "url": "https://github.com/ccarruitero/brandenburg/blob/master/LICENSE"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    'express': '*'
+  }
+}
