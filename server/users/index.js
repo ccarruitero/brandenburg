@@ -21,6 +21,7 @@ db.open(function(err, db){
 exports.findAll = function(req, res, next) {
   db.collection('users', function(err, collection){
     collection.find().toArray(function(err, items){
+      res.setHeader('Content-type', 'application/json');
       res.jsonp(items);
     })
   });
@@ -30,6 +31,7 @@ exports.findById = function(req, res, next) {
   var id = req.params.id;
   db.collection('users', function(err, collection){
     collection.findOne({'_id': new BSON.ObjectID(id)}, function(err, item){
+      res.setHeader('Content-type', 'application/json');
       res.jsonp(item);
     });
   });
@@ -39,6 +41,7 @@ exports.findByEmail = function(req, res, next) {
   var email = req.params.email;
   db.collection('users', function(err, collection){
     collection.findOne({'_email': new BSON.ObjectID(email)}, function(err, item){
+      res.setHeader('Content-type', 'application/json');
       res.jsonp(item);
     });
   });
@@ -53,6 +56,7 @@ exports.addUser = function(req, res, next) {
         res.send({'error':'An error has occurred'});
       } else {
         console.log('Success: ' + JSON.stringify(result[0]));
+        res.setHeader('Content-type', 'application/json');
         res.send(result[0]);
       }
     });
@@ -86,6 +90,7 @@ exports.deleteUser = function(req, res) {
         res.send({'error':'An error has occurred - ' + err});
       } else {
         console.log('' + result + ' document(s) deleted');
+        res.setHeader('Content-type', 'application/json');
         res.send(req.body);
       }
     });
