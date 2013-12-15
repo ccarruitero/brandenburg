@@ -28,7 +28,20 @@
   },
   "devDependencies": {
     "express": "*",
-    "mongodb": "*"
-    "socket.io": "*"
+    "mongodb": "*",
+    "socket.io": "*",
+    "grunt": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-qunit": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-dom-munger": "*",
+    "grunt-ember-templates": "*",
+    "grunt-zip": "*",
+    "bower": "*"
   }
 }
