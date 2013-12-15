@@ -10,6 +10,16 @@ app.configure(function(){
   // }));
 });
 
+// Websocket setup
+var io = require('socket.io').listen(server);
+
+io.configure(function () {
+  io.set('transports', ['websocket', 'xhr-polling']);
+  io.set('polling duration', 10);
+  io.set('log level', 1);
+});
+
+// routes
 app.get('/users', users.findAll);
 app.get('/users/:id', users.findById);
 app.post('/users', users.addUser);

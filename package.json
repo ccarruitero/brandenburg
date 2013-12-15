@@ -29,5 +29,6 @@
   "devDependencies": {
     "express": "*",
     "mongodb": "*"
+    "socket.io": "*"
   }
 }
