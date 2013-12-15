@@ -1,0 +1,35 @@
+# brandenburg
+a simple realtime chat writes with node
+
+# Contributing
+## Requirements
+
+You need node installed.
+
+*Note* I use [nvm](https://github.com/creationix/nvm) like version manager, but you can use another or not use a version manager.
+
+## Use
+Install node modules
+
+```
+npm install
+```
+
+Install bower components
+
+```
+PATH_TO_BOWER_BIN/bower install
+```
+If you have bower installed in global just need
+
+```
+bower install
+```
+
+run server
+
+```
+node server/server.js
+```
+
+check app running in ``localhost:3000``
