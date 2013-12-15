@@ -123,9 +123,13 @@ module.exports = function (app, io) {
     });
   });
 
+  app.get('/', function(req, res) {
+    res.render('index');
+  });
+
   io.sockets.on('connection', function (socket) {
     socket.on('message', function (data) {
-        io.sockets.emit('message', data);
+       io.sockets.emit('message', data);
     });
-  }
+  });
 }
