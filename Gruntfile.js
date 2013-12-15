@@ -62,8 +62,8 @@ module.exports = function(grunt) {
     copy: {
       main: {
         files:[{
-          src: ['index.html', 'manifest.webapp', 'images/*', 'icons/*'],
-          dest: 'server/public/'
+          src: ['client/index.html'],
+          dest: 'server/public/index.html'
         }]
       }
     },
@@ -81,7 +81,7 @@ module.exports = function(grunt) {
       }
     },
     clean: {
-      dist: ['dist/']
+      dist: ['server/public/']
     },
     jshint: {
       all: ['Gruntfile.js', 'client/js/**/*.js', 'server/routes/**/*.js']
@@ -99,14 +99,14 @@ module.exports = function(grunt) {
   //grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  //grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-concat');
   //grunt.loadNpmTasks('grunt-zip');
   grunt.loadNpmTasks('grunt-ember-templates');
 
   grunt.registerTask('default', ['jshint', 'emberTemplates']);
-  grunt.registerTask('build_client', ['clean', 'default', 'dom_munger', 'concat',
-                                'cssmin']);
+  grunt.registerTask('build_client', ['clean', 'default','copy', 'dom_munger',
+                                      'concat', 'cssmin']);
   //grunt.registerTask('pack', ['clean', 'default', 'copy', 'dom_munger',
   //                            'concat', 'uglify', 'cssmin', 'zip']);
 };
