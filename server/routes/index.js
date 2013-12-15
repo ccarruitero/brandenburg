@@ -116,7 +116,6 @@ module.exports = function (app, io) {
           res.send({'error':'An error has occurred - ' + err});
         } else {
           console.log('' + result + ' document(s) deleted');
-          res.setHeader('Content-type', 'application/json');
           res.send(req.body);
         }
       });
@@ -124,7 +123,8 @@ module.exports = function (app, io) {
   });
 
   app.get('/', function(req, res) {
-    res.render('index');
+    res.setHeader('Content-type', 'text/html');
+    res.render('index.html');
   });
 
   io.sockets.on('connection', function (socket) {
