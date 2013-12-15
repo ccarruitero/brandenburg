@@ -31,6 +31,7 @@
     "mongodb": "*",
     "socket.io": "*",
     "grunt": "*",
+    "grunt-cli": "*",
     "grunt-contrib-jshint": "*",
     "grunt-contrib-clean": "*",
     "grunt-contrib-watch": "*",
