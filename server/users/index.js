@@ -35,6 +35,15 @@ exports.findById = function(req, res, next) {
   });
 };
 
+exports.findByEmail = function(req, res, next) {
+  var email = req.params.email;
+  db.collection('users', function(err, collection){
+    collection.findOne({'_email': new BSON.ObjectID(email)}, function(err, item){
+      res.jsonp(item);
+    });
+  });
+};
+
 exports.addUser = function(req, res, next) {
   var user = req.body;
   console.log('Adding user: ' + JSON.stringify(user));
