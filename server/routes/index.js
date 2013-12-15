@@ -25,7 +25,7 @@ module.exports = function (app, io) {
       collection.find().toArray(function(err, items){
         res.setHeader('Content-type', 'application/json');
         res.jsonp(items);
-      })
+      });
     });
   });
    
@@ -132,4 +132,4 @@ module.exports = function (app, io) {
        io.sockets.emit('message', data);
     });
   });
-}
+};
