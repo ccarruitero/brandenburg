@@ -27,6 +27,7 @@
     "test": "grunt test"
   },
   "devDependencies": {
-    "express": "*"
+    "express": "*",
+    "mongodb": "*"
   }
 }
