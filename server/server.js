@@ -1,5 +1,7 @@
 var express = require('express');
 var app = express();
+var server = require('http').createServer(app);
+var port = 3000;
 
 app.configure(function(){
   app.use(express.logger('dev'));
@@ -21,5 +23,5 @@ io.configure(function () {
 // routes
 require('./routes')(app, io);
 
-app.listen(3000);
+server.listen(port);
 console.log('brandenburg is ready :D!');
