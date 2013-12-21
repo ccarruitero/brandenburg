@@ -26,6 +26,11 @@ If you have bower installed in global just need
 bower install
 ```
 
+Build client
+```
+PATH_TO_GRUNT-CLI/grunt build_client
+```
+
 run server
 
 ```
